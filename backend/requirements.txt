@@ -1,0 +1,29 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+sqlalchemy==2.0.36
+python-dotenv==1.0.1
+python-multipart==0.0.20
+
+# Phase 2: data handling
+pandas==2.2.3
+numpy==2.2.1
+
+# Phase 3: machine learning
+scikit-learn==1.6.0
+xgboost==2.1.3
+joblib==1.4.2
+imbalanced-learn==0.13.0
+
+# Phase 5: PCAP processing (pure Python; reading capture files needs no
+# Npcap/WinPcap — that's only required for LIVE packet capture)
+scapy==2.6.1
+
+# Phase 6: report generation (pure Python wheel, no system libraries needed)
+reportlab==4.2.5
+
+# SHAP (explainability, Phase 4) is intentionally NOT listed here.
+# On Windows it often needs Microsoft C++ Build Tools to compile from source.
+# See requirements-explainability.txt — it is fully optional and the app
+# falls back to model feature_importances_/coefficients when it's absent.

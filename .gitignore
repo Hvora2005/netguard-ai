@@ -1,0 +1,29 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# Backend runtime state (regenerated locally, never shared via git)
+backend/.env
+backend/netguard.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/models_storage/*
+!backend/models_storage/.gitkeep
+backend/reports/*
+!backend/reports/.gitkeep
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/tsconfig.tsbuildinfo
+
+# Demo data generated locally
+data/*.csv
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+# Optional extra: pip install -r requirements-explainability.txt
+#
+# Enables true SHAP explanations instead of the built-in feature-importance
+# fallback. On Windows this may require "Microsoft C++ Build Tools"
+# (https://visualstudio.microsoft.com/visual-cpp-build-tools/) if no
+# prebuilt wheel is available for your Python version. Not required to run
+# the rest of NetGuard AI.
+shap==0.46.0

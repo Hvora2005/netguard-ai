@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#080d18] text-slate-100 antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  @apply bg-signal-500/30 text-slate-50;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full border-2 border-transparent bg-slate-700/70 bg-clip-padding;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600/80;
+}
+
+:focus-visible {
+  @apply outline-none ring-2 ring-signal-400/70 ring-offset-2 ring-offset-[#080d18];
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Ambient grain overlay — a fixed, pointer-events-none layer so flat dark
+     panels don't feel like a sterile vector fill. */
+  .bg-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .select {
+    @apply w-full rounded-lg border border-slate-800 bg-slate-900/70 px-2.5 py-1.5 text-sm text-slate-200 transition-colors;
+    @apply hover:border-slate-700 focus:border-signal-500/60;
+  }
+
+  .panel {
+    @apply rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 shadow-panel transition-shadow;
+  }
+
+  .panel-tight {
+    @apply rounded-lg border border-slate-800/70 bg-slate-900/60 p-3;
+  }
+
+  .panel-table {
+    @apply overflow-hidden rounded-xl border border-slate-800/70 bg-slate-900/20 shadow-panel;
+  }
+
+  .label-xs {
+    @apply text-[11px] font-medium uppercase tracking-wide text-slate-500;
+  }
+
+  .stat-value {
+    @apply font-mono tabular-nums;
+  }
+
+  .btn-primary {
+    @apply rounded-lg bg-signal-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset];
+    @apply transition-all duration-150 hover:bg-signal-400 hover:shadow-glow active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-none;
+  }
+
+  .btn-ghost {
+    @apply rounded-lg border border-slate-700 px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-150;
+    @apply hover:border-slate-600 hover:bg-slate-800/60 hover:text-slate-100 active:scale-[0.98];
+  }
+
+  .nav-link {
+    @apply relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all duration-150;
+  }
+
+  .table-row-hover {
+    @apply transition-colors hover:bg-slate-900/70;
+  }
+}

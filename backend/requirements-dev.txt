@@ -1,0 +1,4 @@
+# Optional extra: pip install -r requirements-dev.txt
+# Needed only to run the backend test suite (pytest tests/).
+pytest==8.3.4
+httpx==0.28.1
