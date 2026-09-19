@@ -1,5 +1,7 @@
 # NetGuard AI
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 AI-based network traffic classification & threat-detection platform. Upload traffic datasets, preprocess them without data leakage, train and compare multiple ML models, run live predictions with explainability, analyze PCAP files, investigate flows, review security alerts, and generate reports.
 
 **Status: all 6 phases implemented** (project scaffolding · dataset ingestion & preprocessing · model training/evaluation/experiment tracking · live prediction & explainability · PCAP analysis/traffic explorer/alerts · reports & tests). See `ARCHITECTURE.md`, `API.md`, and `ML_PIPELINE.md` for deeper detail on each layer.
